@@ -1,3 +1,26 @@
-// .card {
-//     background-image: "Images/Background.png";
-// }
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.headerImage {
+    background-image: url("../Images/Background.png");
+        width: 100vw;
+        height: 30vh;
+        
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center; 
+        h1{
+            background-color: rgb(0,0,0,.5);
+            color: white;
+            text-align: center;
+            padding: 2%;
+        }
+    
+}
