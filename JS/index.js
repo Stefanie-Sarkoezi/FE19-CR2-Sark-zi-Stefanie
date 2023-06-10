@@ -121,8 +121,9 @@ function reload(){
           }
       }
       for(let i = 0; i < btns.length; i++){
-          btns [i].addEventListener("click", function(){
-              tasks[i].priority++;
+          btns [i].addEventListener("click", function(event){
+            event.preventDefault();
+            tasks[i].priority++;
               if (tasks[i].priority > 5){
                   tasks[i].priority = 0
               }
