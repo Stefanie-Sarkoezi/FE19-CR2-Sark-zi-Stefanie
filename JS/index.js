@@ -72,7 +72,7 @@ function reload(){
         let newColumn = document.createElement("div");
         newColumn.className = "col";
         newColumn.innerHTML = `
-              <div class="card my-3 shadow ">
+              <div class="mainCard card my-3 shadow ">
                   <div class="py-3 ps-3">
                       <span class ="bg-info px-2 py-1 text-light rounded"> Task </span>
                       <span class="">
@@ -104,7 +104,8 @@ function reload(){
           `; 
           resultDiv.appendChild(newColumn);
       }
-      
+
+      //Change button color of priority:
       let btns = document.getElementsByClassName("myBtn");
       for(let i = 0; i < btns.length; i++){
           if (tasks[i].priority < 2) {
@@ -120,6 +121,8 @@ function reload(){
               btns[i].classList.add ("btn-danger");
           }
       }
+
+      //Change priority index:
       for(let i = 0; i < btns.length; i++){
           btns [i].addEventListener("click", function(event){
             event.preventDefault();
@@ -144,9 +147,10 @@ function reload(){
           });
       
       }
-
+adjustCardHeights();
 }
 
+//Sort Button (Sort by priority):
 let sortDirection = 0;
 let sortButton=document.getElementById("sort"); 
 sortButton.addEventListener ("click", function() {
@@ -155,14 +159,37 @@ if (sortDirection == 0) {
     sortDirection = 1;
     tasks.sort((a,b)=>a.priority-b.priority);
     reload();
-}
+    }
 else {
     sortButton.innerHTML=`Sort by priority: <img src="/Images/sortUp.png" width="1.5%" class="ms-3" >`;
     sortDirection = 0;
     tasks.sort((a,b)=>b.priority-a.priority);
     reload();
-}
+    }
 })
 
+// Adjust the height of the cards so they have the same height:
+function adjustCardHeights() {
+    const cards = document.querySelectorAll('.mainCard');
+    let maxHeight = 0;
+    
+    cards.forEach(card => {
+      card.style.height = 'auto'; 
+      const cardHeight = card.offsetHeight;
+      
+      if (cardHeight > maxHeight) {
+        maxHeight = cardHeight;
+      }
+    });
+    
+    cards.forEach(card => {
+      card.style.height = `${maxHeight}px`;
+    });
+  
+
+}
+
+  window.addEventListener('load', adjustCardHeights);
+  window.addEventListener('resize', adjustCardHeights);
     
 
