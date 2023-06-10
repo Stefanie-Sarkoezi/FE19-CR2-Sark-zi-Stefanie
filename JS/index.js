@@ -64,83 +64,104 @@ let tasks = [
     },
 ];
 
+reload();
+function reload(){
+    let resultDiv = document.getElementById("result");
+    resultDiv.innerHTML = "";
+    for (let i = 0; i < tasks.length; i++) {
+        let newColumn = document.createElement("div");
+        newColumn.className = "col";
+        newColumn.innerHTML = `
+              <div class="card my-3" style="width:"18 rem;" ">
+                  <div class="py-3 ps-3">
+                      <span class ="bg-info px-2 py-1 text-light rounded"> Task </span>
+                      <span class="">
+                          <img src="../images/bookmark.png" width="8%"  class="offset-8">
+                          <img src="../images/dots.png" width="3%"  class="ms-3">
+                      </span>
+                  </div>
+                  <img src="${tasks[i].picture}" class="card-img-top" alt="...">
+                  <div class="card-body text-center">
+                      <h5 class="card-title centured">${tasks[i].taskHeading}</h5>
+                      <p class="card-text">${tasks[i].taskDescription}</p>
+                   </div>
+                  <ul class="list-group list-group-flush">
+                      <li class="list-group-item"> 
+                          <img src="../images/priority sign.png" width ="17%" height =100%" class="pb-1 pe-2">
+                          Priority: <a href="#" class="btn ms-3 myBtn">${tasks[i].priority}</a>
+                      </li>
+                      <li class="list-group-item">
+                          <img src="../images/calendar.png" width ="20%" height ="110%" class="pb-2 pe-2" >
+                          Deadline: ${tasks[i].deadline}
+                      </li>
+                  </ul>
+                  <div class="card-body">
+                      <a href="#" class="btn btn-danger m-3" > <img src="../images/delete.png" width="10%" height="10%" class="me-2 ">Delete</a>
+                      <a href="#" class="btn btn-success m-3"><img src="../images/save.png" width="10%" height="10%" class="me-2"> Save </a>
+                  </div>
+              </div>
+              
+          `; 
+          resultDiv.appendChild(newColumn);
+      }
+      
+      let btns = document.getElementsByClassName("myBtn");
+      for(let i = 0; i < btns.length; i++){
+          if (tasks[i].priority < 2) {
+              btns[i].classList.remove ("btn-danger"); 
+              btns[i].classList.add ("btn-success");
+          }
+          else if (tasks[i].priority < 4){
+          btns[i].classList.remove ("btn-success");
+          btns[i].classList.add ("btn-warning");
+          }
+          else if (tasks[i].priority < 6) {
+              btns[i].classList.remove ("btn-warning");
+              btns[i].classList.add ("btn-danger");
+          }
+      }
+      for(let i = 0; i < btns.length; i++){
+          btns [i].addEventListener("click", function(){
+              tasks[i].priority++;
+              if (tasks[i].priority > 5){
+                  tasks[i].priority = 0
+              }
+              if (tasks[i].priority < 2) {
+                  btns[i].classList.remove ("btn-danger"); 
+                  btns[i].classList.add ("btn-success");
+              }
+              else if (tasks[i].priority < 4){
+              btns[i].classList.remove ("btn-success");
+              btns[i].classList.add ("btn-warning");
+              }
+              else if (tasks[i].priority < 6) {
+                  btns[i].classList.remove ("btn-warning");
+                  btns[i].classList.add ("btn-danger");
+              }
+      
+              btns[i].innerHTML = tasks[i].priority;
+          });
+      
+      }
 
-let resultDiv = document.getElementById("result");
-
-for (let i = 0; i < tasks.length; i++) {
-  let newColumn = document.createElement("div");
-  newColumn.className = "col";
-  newColumn.innerHTML = `
-        <div class="card my-3" style="width:"18rem"; height="10rem" ">
-            <div class="py-3 ps-3">
-                <span class ="bg-info px-2 py-1 text-light rounded"> Task </span>
-                <span class="">
-                    <img src="../images/bookmark.png" width="8%"  class="offset-8">
-                    <img src="../images/dots.png" width="3%"  class="ms-3">
-                </span>
-            </div>
-            <img src="${tasks[i].picture}" class="card-img-top" alt="...">
-            <div class="card-body text-center">
-                <h5 class="card-title centured">${tasks[i].taskHeading}</h5>
-                <p class="card-text">${tasks[i].taskDescription}</p>
-             </div>
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item"> 
-                    <img src="../images/priority sign.png" width ="17%" height =100%" class="pb-1 pe-2">
-                    Priority: <a href="#" class="btn ms-3 myBtn">${tasks[i].priority}</a>
-                </li>
-                <li class="list-group-item">
-                    <img src="../images/calendar.png" width ="20%" height ="110%" class="pb-2 pe-2" >
-                    Deadline: ${tasks[i].deadline}
-                </li>
-            </ul>
-            <div class="card-body">
-                <a href="#" class="btn btn-danger m-3" > <img src="../images/delete.png" width="10%" height="10%" class="me-2 ">Delete</a>
-                <a href="#" class="btn btn-success m-3"><img src="../images/save.png" width="10%" height="10%" class="me-2"> Save </a>
-            </div>
-        </div>
-        
-    `; 
-    resultDiv.appendChild(newColumn);
 }
 
-let btns = document.getElementsByClassName("myBtn");
-for(let i = 0; i < btns.length; i++){
-    if (tasks[i].priority < 2) {
-        btns[i].classList.remove ("btn-danger"); 
-        btns[i].classList.add ("btn-success");
-    }
-    else if (tasks[i].priority < 4){
-    btns[i].classList.remove ("btn-success");
-    btns[i].classList.add ("btn-warning");
-    }
-    else if (tasks[i].priority < 6) {
-        btns[i].classList.remove ("btn-warning");
-        btns[i].classList.add ("btn-danger");
-    }
+let sortDirection = 0;
+let sortButton=document.getElementById("sort"); 
+sortButton.addEventListener ("click", function() {
+if (sortDirection == 0) {
+    sortButton.innerHTML=`Sort by priority: <img src="/Images/sortDown.png" width="1.5%" class="ms-3" >`;
+    sortDirection = 1;
+    tasks.sort((a,b)=>a.priority-b.priority);
+    reload();
 }
-for(let i = 0; i < btns.length; i++){
-    btns [i].addEventListener("click", function(){
-        tasks[i].priority++;
-        if (tasks[i].priority > 5){
-            tasks[i].priority = 0
-        }
-        if (tasks[i].priority < 2) {
-            btns[i].classList.remove ("btn-danger"); 
-            btns[i].classList.add ("btn-success");
-        }
-        else if (tasks[i].priority < 4){
-        btns[i].classList.remove ("btn-success");
-        btns[i].classList.add ("btn-warning");
-        }
-        else if (tasks[i].priority < 6) {
-            btns[i].classList.remove ("btn-warning");
-            btns[i].classList.add ("btn-danger");
-        }
-
-        btns[i].innerHTML = tasks[i].priority;
-    });
-
+else {
+    sortButton.innerHTML=`Sort by priority: <img src="/Images/sortUp.png" width="1.5%" class="ms-3" >`;
+    sortDirection = 0;
+    tasks.sort((a,b)=>b.priority-a.priority);
+    reload();
 }
+})
+
     
 

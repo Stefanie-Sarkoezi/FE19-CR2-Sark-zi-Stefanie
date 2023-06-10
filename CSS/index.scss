@@ -6,21 +6,25 @@
 
 .headerImage {
     background-image: url("../Images/Background.png");
-        width: 100vw;
-        height: 30vh;
-        
-        background-repeat: no-repeat;
-        background-size: cover;
+        width: 100%;
+        height: 35vh;
         background-position: center;
+        background-repeat: no-repeat;
+        align-items: center;
+        background-size: cover;
+        justify-content: center;
         position: relative;
         display: flex;
-        align-items: center;
-        justify-content: center; 
-        h1{
+        
+         
+        p{
             background-color: rgb(0,0,0,.5);
             color: white;
             text-align: center;
             padding: 2%;
+            padding-left: 3%;
+            padding-right: 3%;
+            font-size: 2vw;
         }
     
 }
