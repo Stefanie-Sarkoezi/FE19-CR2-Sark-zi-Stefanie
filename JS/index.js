@@ -74,8 +74,10 @@ for (let i = 0; i < tasks.length; i++) {
         <div class="card my-3" style="width:"18rem"; height="10rem" ">
             <div class="py-3 ps-3">
                 <span class ="bg-info px-2 py-1 text-light rounded"> Task </span>
-                <img src="../images/bookmark.png" width="10% height="10%" class="offset-7">
-                <img src="../images/dots.png" width="4%" height="100%" class="ms-2">
+                <span class="">
+                    <img src="../images/bookmark.png" width="8%"  class="offset-8">
+                    <img src="../images/dots.png" width="3%"  class="ms-3">
+                </span>
             </div>
             <img src="${tasks[i].picture}" class="card-img-top" alt="...">
             <div class="card-body text-center">
