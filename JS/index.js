@@ -72,7 +72,7 @@ function reload(){
         let newColumn = document.createElement("div");
         newColumn.className = "col";
         newColumn.innerHTML = `
-              <div class="card my-3" style="width:"18 rem;" ">
+              <div class="card my-3 shadow ">
                   <div class="py-3 ps-3">
                       <span class ="bg-info px-2 py-1 text-light rounded"> Task </span>
                       <span class="">
