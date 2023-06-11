@@ -24,4 +24,11 @@
   padding-left: 3%;
   padding-right: 3%;
   font-size: 2vw;
+}
+
+.mainCard {
+  background-image: url(/Images/notes-01.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }/*# sourceMappingURL=index.css.map */

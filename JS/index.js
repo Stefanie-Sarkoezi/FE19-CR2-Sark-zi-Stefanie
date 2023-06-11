@@ -9,7 +9,7 @@ let tasks = [
     {
         picture: "../images/Meditate.png",
         taskHeading: "Meditate",
-        taskDescription: "Meditate for 20 minutes in the morning before leaving the house, so that nobody gets killed again.",
+        taskDescription: "Meditate for 20 minutes in the morning before leaving the house, so that nobody gets killed... again.",
         priority: 3,
         deadline: "09.06.2023"   
     },
@@ -51,7 +51,7 @@ let tasks = [
     {
         picture: "../images/Be friendly.png",
         taskHeading: "Be extra friendly to your annoying clients at work",
-        taskDescription: "Remeber, you need this job to feed your cat!",
+        taskDescription: "Remeber... you need this job to feed your cat!",
         priority: 5,
         deadline: "09.06.2023"   
     },
@@ -72,34 +72,36 @@ function reload(){
         let newColumn = document.createElement("div");
         newColumn.className = "col";
         newColumn.innerHTML = `
-              <div class="mainCard card my-3 shadow ">
+                <div class="mainCard card mt-3 mb-5 pt-2 larger shadow" >
                   <div class="py-3 ps-3">
-                      <span class ="bg-info px-2 py-1 text-light rounded"> Task </span>
+                      <span class ="offset-2"> Task </span>
                       <span class="">
-                          <img src="../images/bookmark.png" width="8%"  class="offset-8">
+                          <img src="../images/bookmark.png" width="8%"  class="offset-6">
                           <img src="../images/dots.png" width="3%"  class="ms-3">
                       </span>
-                  </div>
-                  <img src="${tasks[i].picture}" class="card-img-top" alt="...">
-                  <div class="card-body text-center">
-                      <h5 class="card-title centured">${tasks[i].taskHeading}</h5>
-                      <p class="card-text">${tasks[i].taskDescription}</p>
-                   </div>
-                  <ul class="list-group list-group-flush">
-                      <li class="list-group-item"> 
+                    </div>
+                    <div class="text-center"> 
+                        <img src="${tasks[i].picture}" class="card-img-top w-75 ms-5" alt="...">
+                    </div>
+                    <div class="card-body text-center">
+                        <h5 class="card-title offset-2">${tasks[i].taskHeading}</h5>
+                        <p class="card-text offset-2">${tasks[i].taskDescription}</p>
+                    </div>
+                    <ul class="list-group list-group-flush border-0">
+                        <li class="list-group-item bg-warning mb-2 text-center border-0" style="--bs-bg-opacity: .0;"> 
                           <img src="../images/priority sign.png" width ="17%" height =100%" class="pb-1 pe-2">
-                          Priority: <a href="#" class="btn ms-3 myBtn">${tasks[i].priority}</a>
-                      </li>
-                      <li class="list-group-item">
+                          Priority: <a href="#" class="btn ms-3 shadow myBtn">${tasks[i].priority}</a>
+                        </li>
+                        <li class="list-group-itembg-warning text-center border-0" style="--bs-bg-opacity: .0;">
                           <img src="../images/calendar.png" width ="20%" height ="110%" class="pb-2 pe-2" >
                           Deadline: ${tasks[i].deadline}
-                      </li>
-                  </ul>
-                  <div class="card-body">
-                      <a href="#" class="btn btn-danger m-3" > <img src="../images/delete.png" width="10%" height="10%" class="me-2 ">Delete</a>
-                      <a href="#" class="btn btn-success m-3"><img src="../images/save.png" width="10%" height="10%" class="me-2"> Save </a>
-                  </div>
-              </div>
+                        </li>
+                     </ul>
+                    <div class="card-body text-center pt-4 pb-2">
+                      <a href="#" class="btn btn-danger shadow m-3 ms-5" style="width:29%;"  > <img src="../images/delete.png" width="30%" class="me-2 mb-1 pt-1">Delete</a>
+                      <a href="#" class="btn btn-success shadow m-3" style="width:29%;"><img src="../images/save.png" width="30%"  class="me-2 mb-1 pt-1"> Save </a>
+                    </div>
+                </div>
               
           `; 
           resultDiv.appendChild(newColumn);
@@ -184,12 +186,10 @@ function adjustCardHeights() {
     
     cards.forEach(card => {
       card.style.height = `${maxHeight}px`;
-    });
-  
-
+    }); 
 }
 
   window.addEventListener('load', adjustCardHeights);
   window.addEventListener('resize', adjustCardHeights);
     
-
+ 
