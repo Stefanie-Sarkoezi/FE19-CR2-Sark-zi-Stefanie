@@ -72,34 +72,34 @@ function reload(){
         let newColumn = document.createElement("div");
         newColumn.className = "col";
         newColumn.innerHTML = `
-                <div class="mainCard card mt-3 mb-5 pt-2 larger shadow" >
-                  <div class="py-3 ps-3">
-                      <span class ="offset-2"> Task </span>
+                <div id="cardsBody" class="mainCard card mt-3 mb-5 pt-2 pb-3 px-2 larger shadow" >
+                  <div class="mt-3 mb-4">
+                      <span id="mainCardsInfo" class ="ps-5 my-5"> Task </span>
                       <span class="">
-                          <img src="../images/bookmark.png" width="8%"  class="offset-6">
-                          <img src="../images/dots.png" width="3%"  class="ms-3">
+                          <img src="../images/bookmark.png" width="8%"  class="offset-5">
+                          <img src="../images/dots.png" width="3%"  class="ms-3 mt-0">
                       </span>
                     </div>
                     <div class="text-center"> 
-                        <img src="${tasks[i].picture}" class="card-img-top w-75 ms-5" alt="...">
+                        <img src="${tasks[i].picture}" class="card-img-top w-75 ms-3" alt="...">
                     </div>
                     <div class="card-body text-center">
-                        <h5 class="card-title offset-2">${tasks[i].taskHeading}</h5>
-                        <p class="card-text offset-2">${tasks[i].taskDescription}</p>
+                        <h5 id="mainCardHeading" class="card-title mb-3  ">${tasks[i].taskHeading}</h5>
+                        <p id="mainCardDescription" class="card-text">${tasks[i].taskDescription}</p>
                     </div>
                     <ul class="list-group list-group-flush border-0">
                         <li class="list-group-item bg-warning mb-2 text-center border-0" style="--bs-bg-opacity: .0;"> 
                           <img src="../images/priority sign.png" width ="17%" height =100%" class="pb-1 pe-2">
-                          Priority: <a href="#" class="btn ms-3 shadow myBtn">${tasks[i].priority}</a>
+                          Priority: <a href="#" id="buttons" class="btn  ms-3 shadow myBtn">${tasks[i].priority}</a>
                         </li>
-                        <li class="list-group-itembg-warning text-center border-0" style="--bs-bg-opacity: .0;">
+                        <li class="  list-group-item bg-warning text-center border-0" style="--bs-bg-opacity: .0;">
                           <img src="../images/calendar.png" width ="20%" height ="110%" class="pb-2 pe-2" >
                           Deadline: ${tasks[i].deadline}
                         </li>
                      </ul>
                     <div class="card-body text-center pt-4 pb-2">
-                      <a href="#" class="btn btn-danger shadow m-3 ms-5" style="width:29%;"  > <img src="../images/delete.png" width="30%" class="me-2 mb-1 pt-1">Delete</a>
-                      <a href="#" class="btn btn-success shadow m-3" style="width:29%;"><img src="../images/save.png" width="30%"  class="me-2 mb-1 pt-1"> Save </a>
+                      <a href="#" id="buttons" class="btn btn-danger shadow m-3 " style="width:29%;"  > <img src="../images/delete.png" width="30%" class="me-2 mb-1 pt-1">Delete</a>
+                      <a href="#" id="buttons" class="btn btn-success shadow m-3" style="width:29%;"><img src="../images/save.png" width="30%"  class="me-2 mb-1 pt-1"> Save </a>
                     </div>
                 </div>
               

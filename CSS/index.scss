@@ -1,8 +1,15 @@
+@import url('https://fonts.cdnfonts.com/css/ink-free');
+@import url("https://use.typekit.net/xtt2hrz.css");
+@import url("https://use.typekit.net/txe5wun.css");
+@import url("https://use.typekit.net/txe5wun.css");
+@import url("https://use.typekit.net/txe5wun.css");
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+            
 
 .headerImage {
     background-image: url("../Images/Background.png");
@@ -28,11 +35,56 @@
         }
     
 }
-.mainCard {
-    background-image: url(/Images/notes-01.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+// .mainCard {
+//     background-image: url(/Images/notes-01.png);
+//     background-repeat: no-repeat;
+//     background-size: cover;
+//     background-position: center;
     
 
+// }
+#weeklyTasks {
+    font-family: "snug-variable", sans-serif;
+    font-variation-settings: "wght" 302, "wdth" 500, "XHGT" 30;
+    text-transform: uppercase;
+    font-size: 500%;
+    text-decoration: underline;
 }
+
+#sort {
+    font-family: "snug-variable", sans-serif;
+    font-variation-settings: "wght" 302, "wdth" 500, "XHGT" 30;
+    text-transform: uppercase;
+    font-size: 200%;
+}
+
+#cardsBody {
+    font-family: 'Ink Free', sans-serif;
+    font-weight: 600;
+    font-size: larger;
+    background-color: rgb(240, 232, 220);
+
+        #mainCardsInfo {
+            font-family: "scriptorama-markdown-jf", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 150%; 
+        }
+
+        #mainCardHeading {
+            font-family: "scriptorama-markdown-jf", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 150%;         
+        } 
+
+        #buttons {
+            font-family: 'Ink Free', sans-serif;
+            font-weight: 800;
+            font-size: medium;
+         }  
+         
+        .list-group-item {
+            font-size: 120%;
+        }
+ }
