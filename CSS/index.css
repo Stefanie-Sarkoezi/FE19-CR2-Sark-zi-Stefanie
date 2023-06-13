@@ -31,6 +31,13 @@
   font-size: 2vw;
 }
 
+#myNavLinks {
+  color: rgb(131, 131, 131);
+}
+#myNavLinks:hover {
+  color: white;
+}
+
 #weeklyTasks {
   font-family: "snug-variable", sans-serif;
   font-variation-settings: "wght" 302, "wdth" 500, "XHGT" 30;

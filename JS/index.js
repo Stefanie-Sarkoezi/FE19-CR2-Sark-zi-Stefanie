@@ -44,14 +44,14 @@ let tasks = [
     {
         picture: "../images/FeedCat.png",
         taskHeading: "Feed the cat",
-        taskDescription: "<b> !No later that 7pm! </b> <br> Before that grumpy b*tch again takes a dumb on your pillow.",
+        taskDescription: "<b> !No later that 7pm! </b> <br> Before that grumpy b*tch takes a dumb on your pillow again.",
         priority: 5,
         deadline: "09.06.2023"   
     },
     {
         picture: "../images/Be friendly.png",
         taskHeading: "Be extra friendly to your annoying clients at work",
-        taskDescription: "Remeber... you need this job to feed your cat!",
+        taskDescription: "Remeber... you need this job to feed your lovely cat!",
         priority: 5,
         deadline: "09.06.2023"   
     },

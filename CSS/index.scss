@@ -33,16 +33,15 @@
             padding-right: 3%;
             font-size: 2vw;
         }
-    
 }
-// .mainCard {
-//     background-image: url(/Images/notes-01.png);
-//     background-repeat: no-repeat;
-//     background-size: cover;
-//     background-position: center;
-    
 
-// }
+#myNavLinks {
+    color: rgb(131, 131, 131);
+    &:hover {
+       color: white; 
+    }
+}
+
 #weeklyTasks {
     font-family: "snug-variable", sans-serif;
     font-variation-settings: "wght" 302, "wdth" 500, "XHGT" 30;
