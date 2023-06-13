@@ -9,6 +9,13 @@
   box-sizing: border-box;
 }
 
+#myNavLinks {
+  color: rgb(131, 131, 131);
+}
+#myNavLinks:hover {
+  color: white;
+}
+
 .headerImage {
   background-image: url("../Images/Background.png");
   width: 100%;
@@ -29,13 +36,6 @@
   padding-left: 3%;
   padding-right: 3%;
   font-size: 2vw;
-}
-
-#myNavLinks {
-  color: rgb(131, 131, 131);
-}
-#myNavLinks:hover {
-  color: white;
 }
 
 #weeklyTasks {
