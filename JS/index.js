@@ -1,20 +1,20 @@
 let tasks = [
     {
-        picture: "../images/ClearTabs.png",
+        picture: "../../images/ClearTabs.png",
         taskHeading: "Deal with open taps",
         taskDescription: "Go through your 100 open taps and delete not necessary ones.",
         priority: 1,
         deadline: "17.06.2023"
     },
     {
-        picture: "../images/Meditate.png",
+        picture: "../../images/Meditate.png",
         taskHeading: "Meditate",
         taskDescription: "Meditate for 20 minutes in the morning before leaving the house, so that nobody gets killed... again.",
         priority: 3,
         deadline: "09.06.2023"   
     },
     {
-        picture: "../images/Car.png",
+        picture: "/images/Car.png",
         taskHeading: "Bring car into the workshop",
         taskDescription: "The f*cking rust bucket don't wanna start again.",
         priority: 4,
