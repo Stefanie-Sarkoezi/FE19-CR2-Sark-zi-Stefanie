@@ -1,20 +1,20 @@
 let tasks = [
     {
-        picture: "../../images/ClearTabs.png",
+        picture: "../images/ClearTabs.png",
         taskHeading: "Deal with open taps",
         taskDescription: "Go through your 100 open taps and delete not necessary ones.",
         priority: 1,
         deadline: "17.06.2023"
     },
     {
-        picture: "../../../images/Meditate.png",
+        picture: "../images/Meditate.png",
         taskHeading: "Meditate",
         taskDescription: "Meditate for 20 minutes in the morning before leaving the house, so that nobody gets killed... again.",
         priority: 3,
         deadline: "09.06.2023"   
     },
     {
-        picture: "/images/Car.png",
+        picture: "../images/Car.png",
         taskHeading: "Bring car into the workshop",
         taskDescription: "The f*cking rust bucket don't wanna start again.",
         priority: 4,
@@ -28,7 +28,7 @@ let tasks = [
         deadline: "09.06.2023"   
     },
     {
-        picture: "/images/Laundry.png",
+        picture: "../images/Laundry.png",
         taskHeading: "Do the laundry",
         taskDescription: "You are a grown-up, you can't bring your mother the dirty laundry again!",
         priority: 2,
@@ -157,13 +157,13 @@ let sortDirection = 0;
 let sortButton=document.getElementById("sort"); 
 sortButton.addEventListener ("click", function() {
 if (sortDirection == 0) {
-    sortButton.innerHTML=`Sort by priority: <img src="/Images/sortDown.png" width="1.5%" class="ms-3" >`;
+    sortButton.innerHTML=`Sort by priority: <img src="../Images/sortDown.png" width="1.5%" class="ms-3" >`;
     sortDirection = 1;
     tasks.sort((a,b)=>a.priority-b.priority);
     reload();
     }
 else {
-    sortButton.innerHTML=`Sort by priority: <img src="/Images/sortUp.png" width="1.5%" class="ms-3" >`;
+    sortButton.innerHTML=`Sort by priority: <img src="../Images/sortUp.png" width="1.5%" class="ms-3" >`;
     sortDirection = 0;
     tasks.sort((a,b)=>b.priority-a.priority);
     reload();
