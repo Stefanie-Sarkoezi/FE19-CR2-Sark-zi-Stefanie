@@ -7,7 +7,7 @@ let tasks = [
         deadline: "17.06.2023"
     },
     {
-        picture: "../../images/Meditate.png",
+        picture: "../../../images/Meditate.png",
         taskHeading: "Meditate",
         taskDescription: "Meditate for 20 minutes in the morning before leaving the house, so that nobody gets killed... again.",
         priority: 3,
@@ -28,7 +28,7 @@ let tasks = [
         deadline: "09.06.2023"   
     },
     {
-        picture: "../images/Laundry.png",
+        picture: "/images/Laundry.png",
         taskHeading: "Do the laundry",
         taskDescription: "You are a grown-up, you can't bring your mother the dirty laundry again!",
         priority: 2,
@@ -89,7 +89,7 @@ function reload(){
                     </div>
                     <ul class="list-group list-group-flush border-0">
                         <li class="list-group-item bg-warning mb-2 text-center border-0" style="--bs-bg-opacity: .0;"> 
-                          <img src="../images/priority sign.png" width ="17%" height =100%" class="pb-1 pe-2">
+                          <img src="../images/priority-sign.png" width ="17%" height =100%" class="pb-1 pe-2">
                           Priority: <a href="#" id="buttons" class="btn  ms-3 shadow myBtn">${tasks[i].priority}</a>
                         </li>
                         <li class="  list-group-item bg-warning text-center border-0" style="--bs-bg-opacity: .0;">
